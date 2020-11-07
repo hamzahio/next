@@ -118,6 +118,9 @@ export default defineComponent({
 <style>
 body {
 	--v-drawer-max-width: 856px;
+	--v-drawer-cancel-top: 32px;
+	--v-drawer-cancel-left: -76px;
+
 }
 </style>
 
@@ -129,13 +132,15 @@ body {
 	display: flex;
 	flex-direction: column;
 	max-width: var(--v-drawer-max-width);
+	width: 100%;
 	height: 100%;
 	background-color: var(--background-page);
 
 	.cancel {
 		position: absolute;
-		top: 32px;
-		left: -76px;
+		z-index: 6;
+		top: var(--v-drawer-cancel-top);
+		left: var(--v-drawer-cancel-left);
 	}
 
 	.spacer {
@@ -200,6 +205,10 @@ body {
 			@include breakpoint(small) {
 				--content-padding: 32px;
 				--content-padding-bottom: 132px;
+				--v-drawer-cancel-top: 11px;
+				--v-drawer-cancel-left: 12px;
+
+				
 			}
 		}
 	}
